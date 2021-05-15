@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Search GitHub Repository</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fffff;
+            color: #3D3E4E;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+        }
+        p, h2, h4 {
+            margin: 0
+        }
+        input,
+        label,
+        select,
+        button,
+        textarea
+        {
+            margin:0;
+            border:0;
+            padding:0;
+            display:inline-block;
+            vertical-align:middle;
+            white-space:normal;
+            background:none;
+            line-height:1;
+
+            /* Browsers have different default form fonts */
+            font-size:13px;
+            font-family:Arial;
+        }
+        input:focus
+        {
+            outline:0;
+        }
+        input[type=search]
+        {
+            -webkit-appearance:textfield;
+            -webkit-box-sizing:content-box;
+        }
+
+        /* Turn off the recent search for webkit. It adds about 15px padding on the left */
+        ::-webkit-search-decoration
+        {
+            display:none;
+        }
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+    </style>
+</head>
+<body>
+<div id="root"></div>
+</body>
+</html>
