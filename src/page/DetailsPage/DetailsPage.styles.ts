@@ -13,13 +13,11 @@ export const Title = styled.h1`
 `;
 
 export const Content = styled.div`
-  height: 400px;
-  width: 60%;
+  width: 85%;
   margin: 10px 0;
   background-color: white;
   padding: 0 40px;
   border-radius: 5px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;

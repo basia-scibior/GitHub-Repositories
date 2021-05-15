@@ -3,13 +3,13 @@ import { blue, lightGrey } from "../../theme";
 import { Link } from "react-router-dom";
 
 export const ContainerAsLink = styled(Link)`
-  width: 85%;
+  width: 80%;
   min-height: 70px;
   margin: 10px 0;
   background-color: white;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
   display: flex;
   flex-direction: column;
   cursor: pointer;

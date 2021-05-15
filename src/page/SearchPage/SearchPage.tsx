@@ -1,12 +1,6 @@
 import * as React from "react";
 import { FC, useState } from "react";
-import {
-  Button,
-  Container,
-  Content,
-  SearchBar,
-  Top,
-} from "./SearchPage.styles";
+import { Button, Container, SearchBar } from "./SearchPage.styles";
 import { Search } from "../../component/Search/Search";
 import { searchRepositories } from "../../api/search";
 import { useDebounce } from "use-debounce";
@@ -27,20 +21,16 @@ export const SearchPage: FC = () => {
 
   return (
     <Container>
-      <Content>
-        <Top>
-          <SearchBar>
-            <Search value={query} onChange={setQuery} />
-            <Button>In GitHub</Button>
-            <Button>In saved</Button>
-          </SearchBar>
-        </Top>
-        <SearchItems
-          repositories={repositories}
-          isLoading={isLoading}
-          hasQuery={debouncedQuery.length > 0}
-        />
-      </Content>
+      <SearchBar>
+        <Search value={query} onChange={setQuery} />
+        <Button>GITHUB</Button>
+        <Button>SAVED</Button>
+      </SearchBar>
+      <SearchItems
+        repositories={repositories}
+        isLoading={isLoading}
+        hasQuery={debouncedQuery.length > 0}
+      />
     </Container>
   );
 };

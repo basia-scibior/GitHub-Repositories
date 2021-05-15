@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { pink } from "../../theme";
 
 export const Container = styled.div`
   display: flex;
@@ -15,11 +14,11 @@ export const Content = styled.div`
 `;
 
 export const Header = styled.div`
-  background-color: ${pink};
+  border-bottom: 1px solid #e5e7eb;
 `;
 
 export const Title = styled.h1`
-  color: white;
+  color: #161e2e;
   opacity: 0.9;
   text-align: center;
 `;

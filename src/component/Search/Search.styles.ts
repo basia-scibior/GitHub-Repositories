@@ -1,18 +1,17 @@
 import styled from "styled-components";
-import { grey } from "../../theme";
 
 export const Container = styled.div`
-  background: #fff;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.06);
+  background-color: #f9fafb;
   border-radius: 8px;
-  border-color: transparent;
+  border: 1px solid #e2e8f0;
+  color: red;
   height: 64px;
-  width: 60%;
+  width: 85%;
   display: flex;
   align-items: center;
   box-sizing: border-box;
   position: relative;
-  padding: 0 30px;
+  padding: 0 20px;
   @media (max-width: 750px) {
     width: 95%;
   }
@@ -21,5 +20,5 @@ export const Container = styled.div`
 export const StyledInput = styled.input`
   width: 100%;
   font-size: 20px;
-  color: ${grey};
+  color: #6b7280;
 `;
