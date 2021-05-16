@@ -1,7 +1,7 @@
 import { FC } from "react";
 import * as React from "react";
 import { Container, Content, Header, Title } from "./Layout.styles";
-import { Menu } from "../Menu/Menu";
+import { CategoriesList } from "../CategoriesList/CategoriesList";
 
 interface LayoutProps {}
 
@@ -11,7 +11,7 @@ export const Layout: FC<LayoutProps> = (props) => (
       <Title>Search GitHub Repositories</Title>
     </Header>
     <Content>
-      <Menu />
+      <CategoriesList />
       <div>{props.children}</div>
     </Content>
   </Container>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { blueGrey, darkGrey } from "../../theme";
 
 export const SearchBar = styled.div`
   width: 85%;
@@ -17,15 +18,21 @@ export const Container = styled.div`
   min-height: 70%;
 `;
 
+interface ButtonProps {
+  isSelected: boolean;
+}
 export const Button = styled.button`
-  color: #161e2e;
+  color: ${darkGrey};
   cursor: pointer;
   width: 150px;
   height: 64px;
   font-weight: bold;
   font-size: 18px;
   border-radius: 5px;
+  margin-left: 5px;
   :hover {
-    background-color: #fbfcff;
+    opacity: 0.8;
   }
+  background-color: ${(props: ButtonProps) =>
+    props.isSelected ? blueGrey : "white"};
 `;

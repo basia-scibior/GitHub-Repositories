@@ -1,57 +1,29 @@
 import styled from "styled-components";
-import { lightGrey, pink } from "../../theme";
-
-export const Container = styled.main`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-`;
+import { pink } from "../../theme";
 
 export const Title = styled.h1`
   color: ${pink};
 `;
 
-export const Content = styled.div`
-  width: 85%;
-  margin: 10px 0;
-  background-color: white;
-  padding: 0 40px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+export const Container = styled.div`
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  line-height: 35px;
 `;
 
 export const Header = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   @media (max-width: 750px) {
     display: unset;
   }
 `;
 
-export const Row = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  margin-top: 30px;
-  @media (max-width: 750px) {
-    display: unset;
-  }
-`;
-
-export const Text = styled.span`
-  color: ${lightGrey};
-  font-size: 18px;
-`;
-
-export const Owner = styled.div`
+export const Owner = styled.a`
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
 `;
 
 export const Logo = styled.img`

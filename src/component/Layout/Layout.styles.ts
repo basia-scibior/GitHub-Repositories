@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { darkGrey, grey } from "../../theme";
 
 export const Container = styled.div`
   display: flex;
@@ -14,11 +15,10 @@ export const Content = styled.div`
 `;
 
 export const Header = styled.div`
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid ${grey};
 `;
 
 export const Title = styled.h1`
-  color: #161e2e;
-  opacity: 0.9;
+  color: ${darkGrey};
   text-align: center;
 `;

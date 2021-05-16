@@ -18,5 +18,5 @@ export const searchRepositories = async (query: string | null) => {
         password: process.env.GITHUB_PERSONAL_TOKEN as string,
       },
     })
-    .then((response) => response.data);
+    .then((response) => response.data.items);
 };

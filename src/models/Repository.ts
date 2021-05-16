@@ -1,13 +1,13 @@
-export type Repository = {
+export interface Repository {
   id: number;
   name: string;
-  stargazers_count: number;
   language: string;
+  created_at: string;
   owner: {
     avatar_url: string;
     login: string;
+    html_url: string;
   };
   description: string;
-  forks: number;
-  open_issues: number;
-};
+  category: string;
+}

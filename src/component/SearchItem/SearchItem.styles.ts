@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { blue, lightGrey } from "../../theme";
+import { blue, grey } from "../../theme";
 import { Link } from "react-router-dom";
 
 export const ContainerAsLink = styled(Link)`
@@ -9,7 +9,7 @@ export const ContainerAsLink = styled(Link)`
   background-color: white;
   padding: 20px;
   border-radius: 5px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid ${grey};
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -30,7 +30,7 @@ export const Details = styled.div`
 `;
 
 export const Language = styled.span`
-  color: ${lightGrey};
+  color: ${grey};
   margin-left: 10px;
   @media (max-width: 750px) {
     font-size: 15px;
