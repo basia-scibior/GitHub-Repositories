@@ -7,15 +7,17 @@ import { CenterMessage } from "./SearchItems.styles";
 interface SearchItemsProps {
   repositories: Repository[];
   isLoading: boolean;
+  isLocalSearch: boolean;
   hasQuery: boolean;
 }
 
 export const SearchItems: FC<SearchItemsProps> = ({
   repositories,
   isLoading,
+  isLocalSearch,
   hasQuery,
 }) => {
-  if (!hasQuery) {
+  if (!hasQuery && !isLocalSearch) {
     return <CenterMessage>Start typing to see results</CenterMessage>;
   } else if (isLoading) {
     return <CenterMessage>Loading...</CenterMessage>;

@@ -5,38 +5,40 @@ import { Search } from "../../component/Search/Search";
 import { useDebounce } from "use-debounce";
 import { SearchItems } from "../../component/SearchItems/SearchItems";
 import { useRepositories } from "../../hook/useRepositories";
+import { useQueryParam } from "../../hook/useQueryParam";
+import { RepositoryType } from "../../models/RepositoryType";
 
 export const SearchPage: FC = () => {
-  const [isLocalSearch, setIsLocalSearch] = useState<boolean>(false);
-  const [query, setQuery] = useState("");
+  const [repositoryType, setRepositoryType] =
+    useState<RepositoryType>("remote");
+  const [query, setQuery] = useQueryParam("q", "");
   const [debouncedQuery] = useDebounce(query, 500);
   const { repositories, isLoading } = useRepositories(
     debouncedQuery,
-    isLocalSearch
+    repositoryType
   );
-
-  // const repositories = data ? data.items : [];
 
   return (
     <Container>
       <SearchBar>
         <Search value={query} onChange={setQuery} />
         <Button
-          isSelected={!isLocalSearch}
-          onClick={() => setIsLocalSearch(!isLocalSearch)}
+          isSelected={repositoryType === "remote"}
+          onClick={() => setRepositoryType("remote")}
         >
-          GITHUB
+          GitHub
         </Button>
         <Button
-          isSelected={isLocalSearch}
-          onClick={() => setIsLocalSearch(!isLocalSearch)}
+          isSelected={repositoryType === "local"}
+          onClick={() => setRepositoryType("local")}
         >
-          SAVED
+          Saved
         </Button>
       </SearchBar>
       <SearchItems
         repositories={repositories}
         isLoading={isLoading}
+        isLocalSearch={repositoryType === "local"}
         hasQuery={debouncedQuery.length > 0}
       />
     </Container>

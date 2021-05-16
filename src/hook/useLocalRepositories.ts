@@ -1,7 +1,7 @@
 import { useLocalStorage } from "react-use";
 import { LocalRepository } from "../models/LocalRepository";
 
-export const useLocalRepositories = () => {
+export const useLocalRepositories = (query?: string) => {
   const [repositoriesMap, setRepositoriesMap] = useLocalStorage<
     Record<string, LocalRepository>
   >("repositories", {});
@@ -18,9 +18,12 @@ export const useLocalRepositories = () => {
     delete nextRepositoriesMap[repository.id];
     setRepositoriesMap(nextRepositoriesMap);
   };
+  const repositories = Object.values(repositoriesMap || {});
 
   return {
-    repositories: Object.values(repositoriesMap || {}),
+    repositories: query
+      ? repositories.filter((repository) => repository.name.includes(query))
+      : repositories,
     addRepository,
     deleteRepository,
   };

@@ -1,25 +1,18 @@
-import { useQuery } from "react-query";
-import { searchRepositories } from "../api/search";
 import { useLocalRepositories } from "./useLocalRepositories";
+import { useRemoteRepositories } from "./useRemoteRepositories";
+import { RepositoryType } from "../models/RepositoryType";
 
-export const useRemoteRepositories = (query: string, isEnabled: boolean) =>
-  useQuery(["search-repositories", query], () => searchRepositories(query), {
-    enabled: query !== "" && isEnabled,
-  });
-
-export const useRepositories = (query: string, isLocalSearch: boolean) => {
-  const { repositories: localRepositories } = useLocalRepositories();
+export const useRepositories = (query: string, type: RepositoryType) => {
+  const { repositories: localRepositories } = useLocalRepositories(query);
   const { data: remoteRepositories, isLoading } = useRemoteRepositories(
     query,
-    !isLocalSearch
+    type === "remote"
   );
 
-  return isLocalSearch
+  return type === "local"
     ? {
+        repositories: localRepositories,
         isLoading: false,
-        repositories: localRepositories.filter((repository) =>
-          repository.name.includes(query)
-        ),
       }
     : {
         repositories: remoteRepositories || [],

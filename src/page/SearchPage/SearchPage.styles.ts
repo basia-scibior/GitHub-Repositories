@@ -30,6 +30,7 @@ export const Button = styled.button`
   font-size: 18px;
   border-radius: 5px;
   margin-left: 5px;
+  text-transform: uppercase;
   :hover {
     opacity: 0.8;
   }
