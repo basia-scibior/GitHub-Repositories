@@ -9,6 +9,7 @@ import {
   Details,
 } from "./SearchItem.styles";
 import { Repository } from "../../models/Repository";
+import { Logo } from "../../page/DetailsPage/DetailsPage.styles";
 
 interface SearchItemProps {
   repository: Repository;
@@ -17,6 +18,7 @@ interface SearchItemProps {
 export const SearchItem: FC<SearchItemProps> = ({ repository }) => (
   <ContainerAsLink to={`/details/${repository.owner.login}/${repository.name}`}>
     <Row>
+      <Logo src={repository?.owner.avatar_url} />
       <Name>{repository.name}</Name>
     </Row>
 
